@@ -1,0 +1,13 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    
+}
+h1{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #690202 ;
+}
+
