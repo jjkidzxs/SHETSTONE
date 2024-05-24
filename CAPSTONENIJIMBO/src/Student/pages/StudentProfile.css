@@ -115,6 +115,33 @@
     width: 120px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+.edit-profile-button{
+  font-size: 12px;
+    margin-top: 40px;
+    padding: 5px 2px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 120px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.save-profile-button{
+  font-size: 12px;
+    margin-top: 40px;
+    padding: 5px 2px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 120px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 .logout-button{
   font-size: 12px;
     margin-top: 40px;

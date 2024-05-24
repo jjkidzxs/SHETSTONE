@@ -20,7 +20,7 @@ function TeacherNavbar() {
           <Link to="#" className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
-          <h1 style={{ textAlign: 'center', margin: '0 auto' }}>CIT-U NSTP TEACHER</h1>
+          <h1 style={{ textAlign: 'center', margin: '0 auto' }}>EVENT MANAGEMENT SYSTEM</h1>
         </div>
         <nav className={adminsidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' onClick={showSidebar}>

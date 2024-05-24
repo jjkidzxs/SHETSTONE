@@ -162,12 +162,16 @@ const AdminEventContent = () => {
       .then(response => {
         console.log(response.data);
         setMessage(response.data);
-        studentInfo(true);
+        setStudentInfo(true); // Corrected line
+        setTimeout(() => {
+          setStudentInfo([]);
+        }, 1000); // Clear studentInfo after 1 second
       })
       .catch(error => {
         console.error('Error updating time:', error);
       });
   };
+  
   const handleDeleteEvent = async () => {
     try {
       await axios.delete(`http://localhost:8080/deleteByEventID/${eventToDelete}`);

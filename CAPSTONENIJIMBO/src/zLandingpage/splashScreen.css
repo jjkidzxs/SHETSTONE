@@ -1,55 +1,70 @@
-  .AdminStudent__section {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    height: 100vh; 
-    background-color: #fff;
-  }
-  
-  .AdminStudent__container {
-    text-align: center; 
-    background-color: #690202;
-    height: 100vh;
-    max-width: 700px;
-    width: 100%;
-  }
-  
-  .AdminStudent__logo {
-    margin-left: 1.7rem;
-    margin-top: 10rem;
-    width: 40rem;
-    display: block;
-    margin-right: 3rem;
-  }
+.AdminStudent__section {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  height: 100vh; 
+  background-color: #690202;
+}
 
-  .AdminStudent__btn a {
-    width: 150px;
-    height: 50px;
-    background-color: #E1AC00;
-    color: white;
-    border-radius: 5px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-  }
+.AdminStudent__container {
+  text-align: center;
+  background-color: #690202;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
   
-  .AdminStudent__btn {
-    margin-bottom: 120px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: 20vh;
-    width: 100%;
-    gap: 2rem;
-    margin-left: .2rem;
-  }
-  
-  .adminlink {
-    display: block;
-    text-align: center; 
-    font-size: 12px; 
-    color: white;
-    text-decoration: none;
-  }
+}
+.logo-text{
+  font-size: 30px;
+}
+
+.AdminStudent__logo {
+  margin-bottom: 20px;
+}
+
+.EMSlogo {
+  width: 500px; /* Adjust size as needed */
+  height: 500px; /* Adjust size as needed */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 30%; /* This will make the logo perfectly square and centered */
+}
+
+.AdminStudent__btn a {
+  width: 150px;
+  height: 50px;
+  background-color: #E1AC00;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.AdminStudent__btn {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.adminlink {
+  width: 150px;
+  height: 50px;
+  background-color: #ffffff4e;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}

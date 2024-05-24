@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../zComponents/images/logo.png'
+import Ems from '../zComponents/images/emsxcit.png'
 import './LoginSignup.css';
 const AdminLogin = () => {
   const [adminID, setAdminID] = useState('');
@@ -69,10 +69,7 @@ const AdminLogin = () => {
 
 <div class="split rightL">
   <div class="centeredL">
-  <img src={Logo} alt="logo" />
-  <p>
-        The NSTP is a program aimed at enhancing civic consciousness and defense preparedness in the youth by developing the ethics of service and patriotism while undergoing training in any of its program components. Under the NSTP law, state universities are required to offer ROTC and at least one other NSTP component.
-     </p>
+  <img src={Ems} alt="logo" />
   </div>
 </div>
     </div>

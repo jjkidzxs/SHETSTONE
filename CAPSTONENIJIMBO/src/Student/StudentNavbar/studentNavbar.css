@@ -1,50 +1,34 @@
-.Snav .active{
-    color:  #E1AC00;
-}
-
-.Snav{
+.Snav {
     display: flex;
     justify-content: space-between;
-    width: 100%;
     align-items: center;
+    width: 100%;
+    height: 80px;
     background-color: #690202;
     position: sticky;
     top: 0;
-}
-
-.nav__logo {
-    width: 32rem;
-    display: block;
-    margin-left: 2rem;
-    margin-top: 5px;
-}
-
-.Snav ul{
+    padding: 0.5rem 1rem;
+  }
+  
+  .nav__logo {
     display: flex;
-}
-
-.Snav ul{
-    display: flex;
-}
-.Snav ul li{
-    list-style: none;
-}
-
-.Snav ul li a{
-    display: block;
+    align-items: center;
     text-decoration: none;
+  }
+  
+  .nav__logo img {
+    width: 100px;
+    max-width: 100%;
+  }
+  
+  .nav__text {
     color: white;
-    padding: 1rem;
-    font-size: 17px;
-    margin-right: 3rem;
-}
-
-.Snav ul li a:hover{
-    color: #E1AC00;
-}
-
-
-.Snav .menu{
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    font-weight: bold;
+  }
+  
+  .menu {
     display: none;
     position: absolute;
     top: 0.8rem;
@@ -53,51 +37,76 @@
     justify-content: space-between;
     width: 2rem;
     height: 1.8rem;
-}
-
-.Snav .menu span{
+  }
+  
+  .menu span {
     height: 0.4rem;
     width: 100%;
     background-color: #fff;
     border-radius: 0.2rem;
-}
-
-
-@media (max-width: 480px) {
-    .Snav .menu{
-        display: flex;
+  }
+  
+  .Snav ul {
+    display: flex;
+    justify-content: flex-end; /* Align menu items to the right */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .Snav ul li {
+    margin-left: 2rem;
+  }
+  
+  .Snav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    padding: 1rem;
+  }
+  
+  .Snav ul li a:hover {
+    color: #E1AC00;
+  }
+  
+  @media (max-width: 480px) {
+    .menu {
+      display: flex;
     }
-
-    .Snav{
-        flex-direction: column;
-        align-items: start;
+  
+    .Snav {
+      flex-direction: column;
+      align-items: flex-start;
     }
-
-    .Snav .nav__logo{
-        width: 10rem;
-        margin-left: 0.8rem;
+  
+    .nav__logo img {
+      width: 40%;
     }
-
-    .Snav ul{
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-bottom: 0.25rem;
+  
+    .nav__text {
+      font-size: 1.2rem;
+      margin-left: 0;
+      margin-top: 0.5rem;
     }
-
+  
+    .Snav ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+  
     .Snav ul.open {
-        display: flex;
+      display: flex;
     }
-
-    .Snav ul li{
-        width: 100%;
-        text-align: center;
+  
+    .Snav ul li {
+      width: 100%;
+      text-align: center;
+      margin: 0;
     }
-
-    .Snav ul li a{
-        margin: 0.2rem 0.5rem;
+  
+    .Snav ul li a {
+      padding: 0.5rem;
     }
-    .Snav ul li a:hover{
-        color: #E1AC00;
-    }
-}
+  }
+  

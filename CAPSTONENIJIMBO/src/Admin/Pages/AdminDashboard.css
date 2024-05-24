@@ -1,17 +1,17 @@
 .adminDashboards {
-    font-family: Arial, sans-serif;
-    color: #333;
-    overflow: hidden;
-  }
-  
-  .adminDashboards h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    text-align: center;
-    text-transform: uppercase;
-  }
+  font-family: Arial, sans-serif;
+  color: #333;
+  overflow: hidden;
+}
 
-  .adminDashboards-articles-container,
+.adminDashboards h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.adminDashboards-articles-container,
 .adminDashboards-events-container,
 .adminDashboards-teachers-container {
   margin-bottom: 40px;
@@ -32,211 +32,192 @@
   margin-left: 20px;
 }
 
-
-
-
-
 .adminDashboards-category-item {
-    padding: 1rem;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-    margin-bottom: 10px;
+  padding: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+  margin-bottom: 10px;
 }
 
 .adminDashboards-category-item ul {
-    list-style-type: none;
-    padding-left: 0;
-    max-height: 200px; /* Set a fixed height for the list */
-    overflow-y: auto; /* Allow vertical scrolling */
-    border: 1px solid #ccc; /* Optional: Add a border to the list */
-    padding: 10px;
-    margin: 0;
-  }
-
-  .adminDashboards-category-item ul li {
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-
-
-.adminDashboards-teachers-container ul li {
-
-    padding: 5px;
-    margin-bottom: 5px;
+  list-style-type: none;
+  padding-left: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 0;
 }
 
-.adminDashboards-events-container ul li {
-    padding: 5px;
-    margin-bottom: 5px;
+.adminDashboards-category-item ul li {
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
+.adminDashboards-teachers-container ul li,
+.adminDashboards-events-container ul li,
 .adminDashboards-articles-container ul li {
-    padding: 5px;
-    margin-bottom: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
 }
-
-
 
 .adminDashboards-articles-container {
-    width: 31%;
-    float: left;
-    height: 480px;
-    padding: 20px;
-    margin: 0 1.5% 16px 20px; 
-    border-radius: 4px;
-    overflow-y: auto;
-    background: #fff;;
-    border-radius: 30px;
-    padding-bottom: 2rem;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-    overflow: hidden;
-  }
-  
-  .adminDashboards-events-container {
-    width: 31%;
-    float: right;
-    height: 480px;
-    margin: 0 20px 16px 1.5%;
-    border-radius: 4px;
-    overflow-y: auto;
-    background: #fff;;
-    padding: 20px;
-    border-radius: 30px;
-    padding-bottom: 2rem;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-    overflow: hidden;
-  }
-  
-  .adminDashboards-teachers-container {
-    width: 31%;
-    padding: 20px;
-    height: 480px;
-    margin: 16px auto; 
-    border-radius: 4px;
-    overflow-y: auto;
-    background: #fff;;
-    border-radius: 30px;
-    padding-bottom: 2rem;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-    overflow: hidden;
-  }
-  
-
-.adminDashboards-teachers-container ul li:hover {
-    background-color: #800000;
-    color: #f0f0f0;
-    border-radius: 8px;
+  width: 31%;
+  float: left;
+  height: 480px;
+  padding: 20px;
+  margin: 0 1.5% 16px 20px;
+  border-radius: 4px;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 30px;
+  padding-bottom: 2rem;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+  overflow: hidden;
 }
 
-
-.adminDashboards-events-container ul li:hover {
-    background-color: #800000;
-    color: #f0f0f0;
-    border-radius: 8px;
+.adminDashboards-events-container {
+  width: 31%;
+  float: right;
+  height: 480px;
+  margin: 0 20px 16px 1.5%;
+  border-radius: 4px;
+  overflow-y: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 30px;
+  padding-bottom: 2rem;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+  overflow: hidden;
 }
 
+.adminDashboards-teachers-container {
+  width: 31%;
+  padding: 20px;
+  height: 480px;
+  margin: 16px auto;
+  border-radius: 4px;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 30px;
+  padding-bottom: 2rem;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
 
+.adminDashboards-teachers-container ul li:hover,
+.adminDashboards-events-container ul li:hover,
 .adminDashboards-articles-container ul li:hover {
-    background-color: #800000;
-    color: #f0f0f0;
-    border-radius: 8px;
+  background-color: #800000;
+  color: #f0f0f0;
+  border-radius: 8px;
 }
 
-
-
-
-.adminDashboards-category-item-latest{
-    padding: 1rem;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-    margin-bottom: 10px;
-    height: 100px;
+.adminDashboards-category-item-latest {
+  padding: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+  margin-bottom: 10px;
+  height: 100px;
 }
 
 .adminDashboards-category-item-latest ul {
-    list-style-type: none;
-    padding-left: 0;
-    max-height: 200px; /* Set a fixed height for the list */
-    overflow-y: auto; /* Allow vertical scrolling */
-    padding: 10px;
-    margin: 0;
-  }
+  list-style-type: none;
+  padding-left: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 10px;
+  margin: 0;
+}
 
-  .adminDashboards-category-overallarticle{
-    padding: 1rem;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-    margin-bottom: 10px;
-    height: 190px;
-  }
+.adminDashboards-category-overallarticle {
+  padding: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+  margin-bottom: 10px;
+  height: 190px;
+}
 
-  .adminDashboards-category-overallarticle ul{
-    list-style-type: none;
-    padding-left: 0;
-    max-height: 140px; /* Set a fixed height for the list */
-    overflow-y: auto; /* Allow vertical scrolling */
-    padding: 10px;
-    margin: 0;
-  }
+.adminDashboards-category-overallarticle ul {
+  list-style-type: none;
+  padding-left: 0;
+  max-height: 140px;
+  overflow-y: auto;
+  padding: 10px;
+  margin: 0;
+}
 
+.adminDashboards-category-teacher-list {
+  padding: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+  margin-bottom: 10px;
+  height: 299px;
+}
 
-  .adminDashboards-category-teacher-list{
-    padding: 1rem;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-    margin-bottom: 10px;
-    height: 299px;
-  }
+.adminDashboards-category-teacher-list ul {
+  list-style-type: none;
+  padding-left: 0;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 10px;
+  margin: 0;
+}
 
-  .adminDashboards-category-teacher-list ul{
-    list-style-type: none;
-    padding-left: 0;
-    max-height: 250px; /* Set a fixed height for the list */
-    overflow-y: auto; /* Allow vertical scrolling */
-    padding: 10px;
-    margin: 0;
-  }
+.adminDashboards-category-upcomingevents {
+  padding: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+  margin-bottom: 10px;
+  height: 130px;
+}
 
+.adminDashboards-category-upcomingevents ul {
+  list-style-type: none;
+  padding-left: 0;
+  max-height: 70px;
+  overflow-y: auto;
+  padding: 10px;
+  margin: 0;
+}
 
-  .adminDashboards-category-upcomingevents{
-    padding: 1rem;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-    margin-bottom: 10px;
-    height: 130px;
-  }
+.adminDashboards-category-events-list {
+  padding: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+  margin-bottom: 10px;
+  height: 158px;
+}
 
-  .adminDashboards-category-upcomingevents ul{
-    list-style-type: none;
-    padding-left: 0;
-    max-height: 70px; /* Set a fixed height for the list */
-    overflow-y: auto; /* Allow vertical scrolling */
-    padding: 10px;
-    margin: 0;
-  }
+.adminDashboards-category-events-list ul {
+  list-style-type: none;
+  padding-left: 0;
+  max-height: 110px;
+  overflow-y: auto;
+  padding: 10px;
+  margin: 0;
+}
 
-  .adminDashboards-category-events-list{
-    padding: 1rem;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-    margin-bottom: 10px;
-    height: 158px;
-  }
+.announcement-image {
+  border: 2px solid #333; /* Add your desired border style here */
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
 
-  .adminDashboards-category-events-list ul{
-    list-style-type: none;
-    padding-left: 0;
-    max-height: 110px; /* Set a fixed height for the list */
-    overflow-y: auto; /* Allow vertical scrolling */
-    padding: 10px;
-    margin: 0;
-  }
+.announcement-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+

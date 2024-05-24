@@ -17,20 +17,20 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import nstpcapstone1.sims.Entity.StudentEntity;
-import nstpcapstone1.sims.Entity.TeacherEntity;
 import nstpcapstone1.sims.Repository.StudentRepository;
 import nstpcapstone1.sims.Service.StudentService;
 
 @RestController
 @CrossOrigin(origins="*")
 public class StudentController {
-	
-	@Autowired
-	private StudentService studentService;
-	
-	@Autowired
-	private StudentRepository studentRepository;
-	@PostMapping("/signup")
+    
+    @Autowired
+    private StudentService studentService;
+    
+    @Autowired
+    private StudentRepository studentRepository;
+
+    @PostMapping("/signup")
     public ResponseEntity<String> signup(@RequestBody StudentEntity user) {
         // Check if the studentID already exists
         if (studentService.existsByStudentID(user.getStudentID())) {
@@ -45,8 +45,8 @@ public class StudentController {
         studentService.createUser(user);
         return ResponseEntity.status(HttpStatus.CREATED).body("User created successfully");
     }
-	
-	@GetMapping("/getByUserid")
+    
+    @GetMapping("/getByUserid")
     public ResponseEntity findByUserid(
             @RequestParam(name = "studentID", required = false, defaultValue = "0") String studentID,
             @RequestParam(name = "password", required = false, defaultValue = "0") String password) {
@@ -59,57 +59,78 @@ public class StudentController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Log-in invalid");
         }
     }
-	   @GetMapping("/getByStudentID/{studentID}")
-	    public ResponseEntity<StudentEntity> getStudentByStudentID(@PathVariable String studentID) {
-	        StudentEntity student = studentRepository.getByStudentID(studentID);
-	        if (student != null) {
-	            return new ResponseEntity<>(student, HttpStatus.OK);
-	        } else {
-	            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	        }
-	    }
-	   @GetMapping("/getAllStudents")
-	    public List<StudentEntity> getAllStudents() {
-	        return studentService.getAllStudents();
-	    }
-	   @PutMapping("/addpicture/{studentID}")
-	   public ResponseEntity<String> updateProfilePicture(
-	           @PathVariable("studentID") String studentID,
-	           @RequestParam("profile") MultipartFile profile) {
+    
+    @GetMapping("/getByStudentID/{studentID}")
+    public ResponseEntity<StudentEntity> getStudentByStudentID(@PathVariable String studentID) {
+        StudentEntity student = studentRepository.getByStudentID(studentID);
+        if (student != null) {
+            return new ResponseEntity<>(student, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+    
+    @GetMapping("/getAllStudents")
+    public List<StudentEntity> getAllStudents() {
+        return studentService.getAllStudents();
+    }
+    
+    @PutMapping("/addpicture/{studentID}")
+    public ResponseEntity<String> updateProfilePicture(
+           @PathVariable("studentID") String studentID,
+           @RequestParam("profile") MultipartFile profile) {
 
-	       try {
-	           byte[] profilePictureBytes = profile.getBytes(); // Convert MultipartFile to byte[]
-	           boolean updated = studentService.updateProfilePicture(studentID, profilePictureBytes);
-	           if (updated) {
-	               return ResponseEntity.ok("Profile picture updated successfully");
-	           } else {
-	               return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Student not found");
-	           }
-	       } catch (IOException e) {
-	           e.printStackTrace();
-	           return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error processing profile picture");
-	       }
-	   }
-	   @PutMapping("/students/{studentID}/section")
-	    public ResponseEntity<String> updateStudentSection(@PathVariable String studentID, @RequestParam int section) {
-	        boolean success = studentService.updateStudentSection(studentID, section);
-	        if (success) {
-	            return ResponseEntity.ok("Section updated successfully.");
-	        } else {
-	            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Student with ID " + studentID + " not found.");
-	        }
-	    }
-	   @GetMapping("/students/section/{section}")
-	    public ResponseEntity<List<StudentEntity>> getBySection(@PathVariable int section) {
-	        try {
-	            List<StudentEntity> students = studentRepository.findBySection(section);
-	            if (students.isEmpty()) {
-	                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-	            }
-	            return new ResponseEntity<>(students, HttpStatus.OK);
-	        } catch (Exception e) {
-	            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-	        }
-	    }
-	 
+       try {
+           byte[] profilePictureBytes = profile.getBytes(); // Convert MultipartFile to byte[]
+           boolean updated = studentService.updateProfilePicture(studentID, profilePictureBytes);
+           if (updated) {
+               return ResponseEntity.ok("Profile picture updated successfully");
+           } else {
+               return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Student not found");
+           }
+       } catch (IOException e) {
+           e.printStackTrace();
+           return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error processing profile picture");
+       }
+    }
+    
+    @PutMapping("/students/{studentID}/section")
+    public ResponseEntity<String> updateStudentSection(@PathVariable String studentID, @RequestParam int section) {
+        boolean success = studentService.updateStudentSection(studentID, section);
+        if (success) {
+            return ResponseEntity.ok("Section updated successfully.");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Student with ID " + studentID + " not found.");
+        }
+    }
+    
+    @GetMapping("/students/section/{section}")
+    public ResponseEntity<List<StudentEntity>> getBySection(@PathVariable int section) {
+        try {
+            List<StudentEntity> students = studentRepository.findBySection(section);
+            if (students.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            return new ResponseEntity<>(students, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
+    // para profile update
+    @PutMapping("/updateStudent/{studentID}")
+    public ResponseEntity<String> updateStudentProfile(@PathVariable String studentID, @RequestBody StudentEntity updatedStudent) {
+        StudentEntity existingStudent = studentRepository.getByStudentID(studentID);
+        if (existingStudent != null) {
+            existingStudent.setFirstName(updatedStudent.getFirstName());
+            existingStudent.setLastName(updatedStudent.getLastName());
+            existingStudent.setEmail(updatedStudent.getEmail());
+            existingStudent.setCourse(updatedStudent.getCourse());
+            // update other fields as necessary
+            studentRepository.save(existingStudent);
+            return ResponseEntity.ok("Student profile updated successfully.");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Student with ID " + studentID + " not found.");
+        }
+    }
 }
